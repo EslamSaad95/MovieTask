@@ -3,7 +3,7 @@ package com.app.movieTask.data.network.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class MoviesDto(
+data class TrendingMoviesDto(
     @SerializedName("page")
     val page: Int,
     @SerializedName("results")
