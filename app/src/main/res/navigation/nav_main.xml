@@ -8,9 +8,9 @@
 
   <fragment
     android:id="@+id/moviesListFragment"
-    android:name="com.app.movieTask.Presentation.movieList.MoviesListFragment"
+    android:name="com.app.movieTask.Presentation.trendingMovies.TrendingMoviesFragment"
     android:label="fragment_movies_list"
-    tools:layout="@layout/fragment_movies_list" />
+    tools:layout="@layout/fragment_trending_movies" />
 
   <fragment
     android:id="@+id/movieDetailsFragment"

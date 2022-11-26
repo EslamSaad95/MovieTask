@@ -5,11 +5,22 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:padding="@dimen/_14ssp"
-  tools:context=".Presentation.movieList.MoviesListFragment">
+  tools:context=".Presentation.trendingMovies.TrendingMoviesFragment">
 
   <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/rvMovies"/>
+
+  <com.google.android.material.textview.MaterialTextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvErrorMsg"
+    android:layout_gravity="center"
+    android:textColor="@color/black"
+    android:paddingHorizontal="@dimen/_12sdp"
+    android:textAlignment="center"
+    android:visibility="gone"
+    />
 
 </FrameLayout>
