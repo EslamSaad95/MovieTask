@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-parcelize'
+}
+apply from: '../dependencies.gradle'
+android {
+    namespace 'com.app.movieTask'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.app.movieTask"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+        javaParameters = true
+    }
+}
+
+
+dependencies {
+    implementation appDependency.values()
+    kapt "com.google.dagger:hilt-android-compiler:2.44"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+}
+secrets {
+    propertiesFileName = "secrets.properties"
+    defaultPropertiesFileName = 'secrets.properties'
+}
+kapt {
+    correctErrorTypes = true
+}
