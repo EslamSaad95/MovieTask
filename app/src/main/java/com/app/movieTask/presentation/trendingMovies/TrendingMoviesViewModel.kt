@@ -1,4 +1,4 @@
-package com.app.movieTask.Presentation.trendingMovies
+package com.app.movieTask.presentation.trendingMovies
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,7 +7,6 @@ import com.app.movieTask.domain.common.ApiFailure
 import com.app.movieTask.domain.entity.TrendingMoviesEntity
 import com.app.movieTask.domain.usecase.TrendingMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

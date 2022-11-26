@@ -1,4 +1,4 @@
-package com.app.movieTask.Presentation.movieDetails
+package com.app.movieTask.presentation.movieDetails
 
 import androidx.fragment.app.Fragment
 

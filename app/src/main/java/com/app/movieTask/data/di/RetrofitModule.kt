@@ -34,7 +34,7 @@ object RetrofitModule {
 
       val original = it.request()
       val url: HttpUrl =
-        original.url.newBuilder().addQueryParameter("apiKey", BuildConfig.AUTH_TOKEN)
+        original.url.newBuilder().addQueryParameter("api_key", BuildConfig.AUTH_TOKEN)
           .build()
       val request = it.request().newBuilder()
         .header("Content-Type", "application/json")

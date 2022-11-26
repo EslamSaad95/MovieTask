@@ -1,4 +1,4 @@
-package com.app.movieTask.Presentation.utils.extensions
+package com.app.movieTask.presentation.utils.extensions
 
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -37,3 +37,4 @@ fun View.showLongSnackBar(message: String) {
   Snackbar.make(this, message, Snackbar.LENGTH_LONG)
     .setBackgroundTint(ContextCompat.getColor(context, R.color.black)).show()
 }
+

@@ -1,4 +1,4 @@
-package com.app.movieTask.Presentation.utils.base
+package com.app.movieTask.presentation.utils.base
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

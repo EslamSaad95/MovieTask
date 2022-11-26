@@ -8,13 +8,13 @@
 
   <fragment
     android:id="@+id/moviesListFragment"
-    android:name="com.app.movieTask.Presentation.trendingMovies.TrendingMoviesFragment"
+    android:name="com.app.movieTask.presentation.trendingMovies.TrendingMoviesFragment"
     android:label="fragment_movies_list"
     tools:layout="@layout/fragment_trending_movies" />
 
   <fragment
     android:id="@+id/movieDetailsFragment"
-    android:name="com.app.movieTask.Presentation.movieDetails.MovieDetailsFragment"
+    android:name="com.app.movieTask.presentation.movieDetails.MovieDetailsFragment"
     android:label="fragment_movie_details"
     tools:layout="@layout/fragment_movie_details" />
 </navigation>

@@ -1,6 +1,6 @@
-package com.app.movieTask.Presentation.trendingMovies.adapter
+package com.app.movieTask.presentation.trendingMovies.adapter
 
-import com.app.movieTask.Presentation.utils.base.BaseAdapter
+import com.app.movieTask.presentation.utils.base.BaseAdapter
 import com.app.movieTask.databinding.ItemTrendingMoviesBinding
 import com.app.movieTask.domain.entity.TrendingMoviesEntity
 

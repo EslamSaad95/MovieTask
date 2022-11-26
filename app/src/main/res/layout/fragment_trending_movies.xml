@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<layout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:padding="@dimen/_14ssp"
-  tools:context=".Presentation.trendingMovies.TrendingMoviesFragment">
+  xmlns:tools="http://schemas.android.com/tools">
 
-  <androidx.recyclerview.widget.RecyclerView
+  <data>
+
+    <variable
+      name="viewModel"
+      type="com.app.movieTask.presentation.trendingMovies.TrendingMoviesViewModel" />
+
+    <import type="android.view.View" />
+  </data>
+
+  <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/rvMovies"/>
+    android:layout_height="match_parent"
 
-  <com.google.android.material.textview.MaterialTextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/tvErrorMsg"
-    android:layout_gravity="center"
-    android:textColor="@color/black"
-    android:paddingHorizontal="@dimen/_12sdp"
-    android:textAlignment="center"
-    android:visibility="gone"
-    />
+    tools:context=".Presentation.trendingMovies.TrendingMoviesFragment">
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rvMovies"
+      android:layout_width="match_parent"
+      android:padding="@dimen/_14ssp"
+      android:clipToPadding="false"
+      android:layout_height="wrap_content" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/tvErrorMsg"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:paddingHorizontal="@dimen/_12sdp"
+      android:textAlignment="center"
+      android:textColor="@color/black"
+      android:visibility="gone" />
+
+    <ProgressBar
+      android:id="@+id/progressbar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:visibility='@{viewModel.loadingLiveData.booleanValue()==false? View.GONE : View.VISIBLE}'
+      tools:visibility="gone" />
+
+  </FrameLayout>
+</layout>

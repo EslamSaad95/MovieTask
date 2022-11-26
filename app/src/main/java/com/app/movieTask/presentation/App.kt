@@ -1,4 +1,4 @@
-package com.app.movieTask.Presentation
+package com.app.movieTask.presentation
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -1,4 +1,4 @@
-package com.app.movieTask.Presentation.trendingMovies
+package com.app.movieTask.presentation.trendingMovies
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.app.movieTask.Presentation.trendingMovies.adapter.TrendingMoviesRvAdapter
-import com.app.movieTask.Presentation.utils.extensions.linearLayoutManager
-import com.app.movieTask.Presentation.utils.extensions.visible
+import com.app.movieTask.presentation.trendingMovies.adapter.TrendingMoviesRvAdapter
+import com.app.movieTask.presentation.utils.extensions.linearLayoutManager
+import com.app.movieTask.presentation.utils.extensions.visible
+import com.app.movieTask.R
 import com.app.movieTask.databinding.FragmentTrendingMoviesBinding
 import com.app.movieTask.domain.common.ApiFailure
-import com.app.movieTask.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TrendingMoviesFragment : Fragment() {
 
   private val viewModel by viewModels<TrendingMoviesViewModel>()
@@ -29,11 +31,18 @@ class TrendingMoviesFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    with(binding) {
+      lifecycleOwner = viewLifecycleOwner
+      viewModel = this@TrendingMoviesFragment.viewModel
+    }
 
+
+
+    observerTrendingMovies()
+    observerErrorLiveData()
   }
 
-  private fun observerErrorLiveData()
-  {
+  private fun observerErrorLiveData() {
     viewModel.errorLiveData.observe(viewLifecycleOwner) {
 
       if (it is ApiFailure.ConnectionError)
@@ -53,8 +62,7 @@ class TrendingMoviesFragment : Fragment() {
     }
   }
 
-  private fun observerTrendingMovies()
-  {
+  private fun observerTrendingMovies() {
     viewModel.trendingMoviesLiveData.observe(viewLifecycleOwner) {
       it?.let {
         trendingMoviesAdapter.fill(it)
@@ -63,11 +71,10 @@ class TrendingMoviesFragment : Fragment() {
     }
   }
 
-  private fun initTrendingMoviesRv()
-  {
+  private fun initTrendingMoviesRv() {
     binding.rvMovies.apply {
       linearLayoutManager()
-      adapter=trendingMoviesAdapter
+      adapter = trendingMoviesAdapter
       trendingMoviesAdapter.setOnClickListener { clickedView, item, position ->
         //todo navigate to movie details
       }
