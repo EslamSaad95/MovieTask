@@ -4,12 +4,12 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/nav_main"
-  app:startDestination="@id/moviesListFragment">
+  app:startDestination="@id/trendingMoviesFragment">
 
   <fragment
-    android:id="@+id/moviesListFragment"
+    android:id="@+id/trendingMoviesFragment"
     android:name="com.app.movieTask.presentation.trendingMovies.TrendingMoviesFragment"
-    android:label="fragment_movies_list"
+    android:label="@string/trending_movies_title"
     tools:layout="@layout/fragment_trending_movies" />
 
   <fragment

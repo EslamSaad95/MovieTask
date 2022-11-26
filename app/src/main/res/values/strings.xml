@@ -12,4 +12,10 @@
   <string name="network_unexpected_response">Sorry, unexpected response from server.</string>
   <string name="network_unknown_error">Unknown error occurred, please try again.</string>
   <!-- endregion -->
+
+
+  <!--region trendingMovies Fragment -->
+  <string name="trending_movies_title">Trending Movies</string>
+  <!--endregion-->
+
 </resources>
