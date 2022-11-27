@@ -15,7 +15,6 @@
   <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".Presentation.trendingMovies.TrendingMoviesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -42,6 +41,7 @@
       android:layout_gravity="center"
       android:visibility='@{viewModel.loadingLiveData.booleanValue()==false? View.GONE : View.VISIBLE}'
       tools:visibility="gone" />
+
 
   </FrameLayout>
 </layout>

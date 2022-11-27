@@ -13,8 +13,11 @@ fun loadImage(view: ImageView, url: String?) {
 
 
 @BindingAdapter("extractYear")
-fun extractYearFromDate(view:MaterialTextView,date:String) {
-  val formatter = SimpleDateFormat("yyyy", Locale.US)
-  val dateDate: Date = formatter.parse(date)
-  view.text= formatter.format(dateDate)
+fun extractYearFromDate(view:MaterialTextView,date:String?) {
+  date?.let {
+    val formatter = SimpleDateFormat("yyyy", Locale.US)
+    val dateDate: Date = formatter.parse(date)
+    view.text= formatter.format(dateDate)
+  }
+
 }

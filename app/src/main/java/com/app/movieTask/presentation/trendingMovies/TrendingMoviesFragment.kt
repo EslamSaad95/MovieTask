@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -76,8 +77,9 @@ class TrendingMoviesFragment : Fragment() {
     binding.rvMovies.apply {
       linearLayoutManager()
       adapter = trendingMoviesAdapter
-      trendingMoviesAdapter.setOnClickListener { clickedView, item, position ->
-        findNavController().navigate(R.id.actionTrendingMoviesToMovieDetails)
+      trendingMoviesAdapter.setOnClickListener { _, item, _ ->
+   findNavController().navigate(R.id.actionTrendingMoviesToMovieDetails, bundleOf("movieId" to item.movieId))
+
       }
     }
   }

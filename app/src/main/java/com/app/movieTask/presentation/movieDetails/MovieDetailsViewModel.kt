@@ -8,9 +8,10 @@ import com.app.movieTask.domain.entity.MovieDetailsEntity
 import com.app.movieTask.domain.usecase.MovieDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class MovieDetailsViewModel(private val useCase: MovieDetailsUseCase) : ViewModel() {
+class MovieDetailsViewModel @Inject constructor(private val useCase: MovieDetailsUseCase) : ViewModel() {
 
   private val _movieDetailsLiveData by lazy { MutableLiveData<MovieDetailsEntity>() }
   val movieDetailsLiveData get() = _movieDetailsLiveData
