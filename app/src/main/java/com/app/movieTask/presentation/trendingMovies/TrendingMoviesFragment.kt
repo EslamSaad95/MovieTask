@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.app.movieTask.presentation.trendingMovies.adapter.TrendingMoviesRvAdapter
 import com.app.movieTask.presentation.utils.extensions.linearLayoutManager
 import com.app.movieTask.presentation.utils.extensions.visible
@@ -76,7 +77,7 @@ class TrendingMoviesFragment : Fragment() {
       linearLayoutManager()
       adapter = trendingMoviesAdapter
       trendingMoviesAdapter.setOnClickListener { clickedView, item, position ->
-        //todo navigate to movie details
+        findNavController().navigate(R.id.actionTrendingMoviesToMovieDetails)
       }
     }
   }

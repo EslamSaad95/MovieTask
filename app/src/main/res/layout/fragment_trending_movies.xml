@@ -21,7 +21,7 @@
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rvMovies"
       android:layout_width="match_parent"
-      android:padding="@dimen/_14ssp"
+      android:padding="@dimen/_6sdp"
       android:clipToPadding="false"
       android:layout_height="wrap_content" />
 
