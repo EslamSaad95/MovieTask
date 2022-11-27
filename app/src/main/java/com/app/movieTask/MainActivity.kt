@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
   private fun initNavigation() {
     setSupportActionBar(binding.toolbar)
     setupActionBarWithNavController(navController, appBarConfiguration)
-    binding.toolbar.gsetNavigationOnClickListener {
+    binding.toolbar.setNavigationOnClickListener {
       onBackPressedDispatcher.onBackPressed()
     }
   }
