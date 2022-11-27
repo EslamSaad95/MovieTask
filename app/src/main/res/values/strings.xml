@@ -18,4 +18,8 @@
   <string name="trending_movies_title">Trending Movies</string>
   <!--endregion-->
 
+  <!--region MovieDetails Fragment-->
+  <string name="movie_details_title">Movie Details</string>
+  <!--endregion-->
+
 </resources>

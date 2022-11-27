@@ -20,6 +20,6 @@
   <fragment
     android:id="@+id/movieDetailsFragment"
     android:name="com.app.movieTask.presentation.movieDetails.MovieDetailsFragment"
-    android:label="fragment_movie_details"
+    android:label="@string/movie_details_title"
     tools:layout="@layout/fragment_movie_details" />
 </navigation>
